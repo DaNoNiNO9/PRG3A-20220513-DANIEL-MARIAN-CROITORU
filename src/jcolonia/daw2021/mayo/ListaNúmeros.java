@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Formatter;
 
+
 /**
  * Colección de números «decimales» –valores con parte entera y parte
  * fraccionaria, almacenamiento en coma flotante–. Admite valores positivos con
@@ -121,7 +122,6 @@ public class ListaNúmeros {
 			}
 		}
 	}
-
 	/**
 	 * Informa del número de sumando almacenados.
 	 * 
@@ -230,5 +230,9 @@ public class ListaNúmeros {
 
 		System.out.println();
 		System.out.println(grupo);
+	}
+
+	public ListaNúmeros consultar(int posicion) {
+		return ListaNúmeros.get(posicion);
 	}
 }

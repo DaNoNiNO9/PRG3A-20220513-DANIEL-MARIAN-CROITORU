@@ -27,15 +27,27 @@ public class ControlSumatorio {
 	 */
 	private Scanner entrada;
 
+	/**
+	 * 
+	 */
 	private ListaNúmeros conjunto;
 
+	/**
+	 * 
+	 */
 	private VistaMenúBásico menúPrincipal;
 
+	/**
+	 * @param in
+	 */
 	public ControlSumatorio(Scanner in) {
 		this.entrada = in;
 		conjunto = new ListaNúmeros();
 	}
 
+	/**
+	 * 
+	 */
 	private void buclePrincipal() {
 		int opciónElegida;
 		boolean fin = false;
@@ -46,38 +58,60 @@ public class ControlSumatorio {
 		do {
 			menúPrincipal.mostrarTítulo1();
 			menúPrincipal.mostrarOpciones();
-			opciónElegida = menúPrincipal.pedirOpción();
+			opciónElegida = menúPrincipal.pedirOpcion();
 			switch (opciónElegida) {
 			case 5: // SALIR
 				fin = true;
 				Vista.mostrarAviso("¡¡¡A-D-I-O-S!!");
 				break;
-//			case 1: // Opción 1: Entrada datos
-//				cargarSumando();
-//				break;
-//			case 2: // Opción 2: Mostrar sumandos
-//				mostrarSumandos();
-//				break;
-//			case 3: // Opción 3: Mostrar suma
-//				mostrarSuma();
-//				break;
-//			case 4: // Opción 4: Reset
-//				restablecer();
-//				break;
+			case 1: // Opción 1: Entrada datos
+				VistaAltasValores datos = new VistaAltasValores(título,sc, menúPrincipal);
+				menúPrincipal= datos.VistaAltasValores();
+				break;
+			case 2: // Opción 2: Mostrar sumandos
+				mostrarSumandos();
+				break;
+			case 3: // Opción 3: Mostrar suma
+				mostrarSuma();
+				break;
+			case 4: // Opción 4: Reset
+				restablecer();
+				break;
 			default: // Opción no esperada: abortar
 				ejecutarGenérico(opciónElegida);
-				System.err.println("Error interno de programa - operación pendiente de desarrollo");
 				System.exit(1);
 			}
 		} while (!fin);
 	}
 
+	/**
+	 * 
+	 */
+	private void restablecer() {
+		// TODO Esbozo de método generado automáticamente
+		
+	}
+
+	/**
+	 * 
+	 */
+	private void mostrarSuma() {
+		// TODO Esbozo de método generado automáticamente
+		
+	}
+
+	/**
+	 * @param id
+	 */
 	private void ejecutarGenérico(int id) {
 		String mensaje;
 		mensaje = String.format("%n  Ha elegido la opción %d: «%s»", id, OPCIONES_MENÚ_PRINCIPAL[id - 1]);
 		Vista.mostrarTexto(mensaje);
 	}
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		Scanner entrada = new Scanner(System.in);
 
